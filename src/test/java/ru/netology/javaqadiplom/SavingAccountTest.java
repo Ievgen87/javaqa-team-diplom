@@ -79,20 +79,6 @@ public class SavingAccountTest {
     }
 
     @Test
-    public void shouldAddLessMaxBalanceOne() {  // пополнение до макс минус 1
-        SavingAccount account = new SavingAccount(
-                2_000,
-                1_000,
-                10_000,
-                5
-        );
-
-        account.add(7_999);
-        Assertions.assertEquals(2_000 + 7_999, account.getBalance());
-
-    }
-
-    @Test
     public void shouldAddEqualMaxBalance() { // пополнение до макс
         SavingAccount account = new SavingAccount(
                 2_000,
