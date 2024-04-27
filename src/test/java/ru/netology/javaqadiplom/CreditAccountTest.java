@@ -93,7 +93,8 @@ public class CreditAccountTest {
 
     @Test
     public void interestOnNegativeBalance() {
-        CreditAccount account = new CreditAccount(-1000, 5000, 15);
+        CreditAccount account = new CreditAccount(1000, 5000, 15);
+        account.pay(2_000);
 
         Assertions.assertEquals(-150, account.yearChange());
     }
@@ -107,7 +108,7 @@ public class CreditAccountTest {
 
     @Test
     public void addCreditLimit() {
-        CreditAccount account = new CreditAccount(-1000, 5_000, 15);
+        CreditAccount account = new CreditAccount(1000, 5_000, 15);
 
         Assertions.assertEquals(5_000, account.getCreditLimit());
     }
