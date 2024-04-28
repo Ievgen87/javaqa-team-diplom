@@ -20,11 +20,11 @@ public class CreditAccountTest {
 
     @Test
     public void addToNegativeBalance() {
-        CreditAccount account = new CreditAccount(-1000, 5_000, 15);
+        CreditAccount account = new CreditAccount(1000, 5_000, 15);
 
-        account.add(3_000);
+        account.pay(3_000);
 
-        Assertions.assertEquals(2_000, account.getBalance());
+        Assertions.assertEquals(-2_000, account.getBalance());
     }
 
     @Test
@@ -72,7 +72,7 @@ public class CreditAccountTest {
         CreditAccount account = new CreditAccount(0, 500, 15);
         account.add(1000);
 
-        Assertions.assertEquals(1000, account.pay(0));
+        Assertions.assertEquals(false, account.pay(0));
     }
 
     @Test
